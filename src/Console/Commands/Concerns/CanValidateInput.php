@@ -1,6 +1,6 @@
 <?php
 
-namespace Rmitesh\LaravelPantry\Commands\Concerns;
+namespace Rmitesh\LaravelPantry\Console\Commands\Concerns;
 
 use Closure;
 use Illuminate\Support\Facades\Validator;

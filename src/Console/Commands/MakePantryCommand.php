@@ -1,6 +1,6 @@
 <?php
 
-namespace Rmitesh\LaravelPantry\Commands;
+namespace Rmitesh\LaravelPantry\Console\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Support\Arr;

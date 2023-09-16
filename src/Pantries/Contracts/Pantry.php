@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Collection;
 
-interface Repository
+interface Pantry
 {
 	/**
      * Gets the name of the Eloquent model.
