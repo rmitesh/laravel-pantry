@@ -1,0 +1,12 @@
+<?php
+
+namespace {{ namespace }};
+
+use {{ modelNamespace }};
+use Rmitesh\LaravelPantry\Core\Pantry;
+// use Rmitesh\LaravelPantry\Core\Concerns\HasPagination;
+
+class {{ className }} extends Pantry
+{
+    protected static ?string $model = {{ model }}::class;
+}

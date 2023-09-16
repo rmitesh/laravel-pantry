@@ -1,0 +1,37 @@
+{
+    "name": "rmitesh/laravel-pantry",
+    "description": "To generate a Laravel repository equipped with essential default features.",
+    "keywords": [
+        "rmitesh",
+        "laravel",
+        "laravel-pantry",
+        "repository"
+    ],
+    "homepage": "https://github.com/rmitesh/laravel-pantry",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Mitesh Rathod",
+            "email": "meet.drive32@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Rmitesh\\LaravelPantry\\": "src/"
+        }
+    },
+    "require": {},
+    "config": {
+        "sort-packages": true,
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Rmitesh\\LaravelPantry\\LaravelPantryServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
