@@ -1,5 +1,7 @@
 # Laravel Pantry
 
+![laravel-pantry](https://github.com/rmitesh/laravel-pantry/assets/48554454/8b2976b7-04e6-495b-bb6c-a957bbfe0339)
+
 You may know and worked with repository pattern in the Laravel.
 
 Now, here I am going to introduce **Laravel Pantry** where you get all things in one place same as Food Pantry Shop.
