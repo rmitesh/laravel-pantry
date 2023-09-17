@@ -3,8 +3,8 @@
 namespace {{ namespace }};
 
 use {{ modelNamespace }};
-use Rmitesh\LaravelPantry\Core\Pantry;
-// use Rmitesh\LaravelPantry\Core\Concerns\HasPagination;
+use Rmitesh\LaravelPantry\Pantries\Pantry;
+// use Rmitesh\LaravelPantry\Pantries\Concerns\HasPagination;
 
 class {{ className }} extends Pantry
 {

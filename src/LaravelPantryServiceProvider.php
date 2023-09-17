@@ -3,7 +3,7 @@
 namespace Rmitesh\LaravelPantry;
 
 use Illuminate\Support\ServiceProvider;
-use Rmitesh\LaravelPantry\Commands\MakePantryCommand;
+use Rmitesh\LaravelPantry\Console\Commands\MakePantryCommand;
 
 class LaravelPantryServiceProvider extends ServiceProvider
 {

@@ -2,15 +2,13 @@
 
 namespace Rmitesh\LaravelPantry\Pantries;
 
-use Rmitesh\LaravelPantry\Pantries\Pantry as BasePantry;
-use Rmitesh\LaravelPantry\Pantries\Concerns\InteractsWithRecord;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Collection;
 
-abstract class Pantry implements BasePantry
+abstract class Pantry implements Contracts\Pantry
 {
-	use InteractsWithRecord;
+	use Concerns\InteractsWithRecord;
 
 	/**
      * The model being queried.

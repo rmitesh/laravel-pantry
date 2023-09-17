@@ -35,13 +35,10 @@ trait InteractsWithRecord
     {
         if ( $relationships ) {
             foreach ( $relationships as $functionName => $argument ) {
-                if (
-                    is_string($argument) ||
-                    ( is_array($argument) && Arr::isAssoc($argument) )
-                ) {
-                    $query->{$functionName}($argument);
-                } else {
+                if ( $argument instanceof Traversable ) {
                     $query->{$functionName}(...$argument);
+                } else {
+                    $query->{$functionName}($argument);
                 }
             }
         }

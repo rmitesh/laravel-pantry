@@ -13,7 +13,8 @@
     "authors": [
         {
             "name": "Mitesh Rathod",
-            "email": "meet.drive32@gmail.com"
+            "email": "meet.drive32@gmail.com",
+            "role": "Developer"
         }
     ],
     "autoload": {
@@ -23,7 +24,7 @@
     },
     "require": {},
     "config": {
-        "sort-packages": true,
+        "sort-packages": true
     },
     "extra": {
         "laravel": {
