@@ -285,6 +285,11 @@ Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
 
 Please review [our security policy](../../security/policy) on how to report security vulnerabilities.
 
+## Buy me a Coffee
+<a href="https://www.buymeacoffee.com/rmitesh" target="_blank">
+	<img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" >
+</a>
+
 ## Credits
 
 - [Mitesh Rathod](https://github.com/rmitesh)
