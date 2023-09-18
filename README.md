@@ -25,7 +25,14 @@ composer require rmitesh/laravel-pantry
 
 To create a new Pantry class
 ```bash
-php artisan make:pantry FoodPantry Food
+php artisan make:pantry Food
+```
+> Based on the Pantry class name, automatically consider model name will be same as Pantry class.
+
+Or you want to generate for specific model.
+
+```bash
+php artisan make:pantry Food --model=FoodItem
 ```
 
 It will create `FoodPantry` class inside the `app/Pantries` directory.
