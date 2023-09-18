@@ -17,7 +17,7 @@ class MakePantryCommand extends Command
      * @var string
      */
     protected $signature = '
-        make:pantry {pantry?} {model?}
+        make:pantry {pantry?} {--model= :  Generate pantry class for given model}
     ';
 
     /**
@@ -25,7 +25,7 @@ class MakePantryCommand extends Command
      *
      * @var string
      */
-    protected $description = 'Create a new pantry';
+    protected $description = 'Create a new pantry class.';
 
     /**
      * Execute the console command.
@@ -47,7 +47,7 @@ class MakePantryCommand extends Command
         $modelNamespace = 'App\\Models';
 
         // Pantry Name
-        $pantry = (string) Str::of($this->argument('pantry') ?? $this->askRequired('Pantry (e.g. `UserPantry`)', 'pantry'))
+        $pantry = (string) Str::of($this->argument('pantry') ?? $this->askRequired('Pantry (e.g. `FoodPantry`)', 'pantry'))
             ->studly()
             ->trim('/')
             ->trim('\\')
@@ -77,12 +77,15 @@ class MakePantryCommand extends Command
             ->append('.php');
 
         // Model Name
-        $model = (string) Str::of($this->argument('model') ?? $this->askRequired('Model (e.g. `User`)', 'model'))
-            ->studly()
-            ->trim('/')
-            ->trim('\\')
-            ->trim(' ')
-            ->replace('/', '\\');
+        $model = (string) Str::of($className)->replace('Pantry', '');
+        if ( $this->option('model') ) {
+            $model = (string) Str::of($this->option('model') ?? $this->askRequired('Model (e.g. `Food`)', 'model'))
+                ->studly()
+                ->trim('/')
+                ->trim('\\')
+                ->trim(' ')
+                ->replace('/', '\\');
+        }
 
         list($className, $namespace) = $this->getClassName($model);
 
@@ -98,6 +101,10 @@ class MakePantryCommand extends Command
             'model' => $model,
             'modelNamespace' => $modelNamespace,
         ]);
+
+        $this->info("Panrty [{$path}] created successfully.");
+
+        return static::SUCCESS;
     }
 
     private function getClassName($name): array
