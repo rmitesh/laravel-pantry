@@ -2,6 +2,14 @@
 
 ![laravel-pantry](https://github.com/rmitesh/laravel-pantry/assets/48554454/8b2976b7-04e6-495b-bb6c-a957bbfe0339)
 
+<p align="center">
+<a href="https://packagist.org/packages/rmitesh/laravel-pantry"><img alt="Latest Stable Version" src="https://img.shields.io/packagist/v/rmitesh/laravel-pantry.svg?style=for-the-badge"></a>
+<a href="https://packagist.org/packages/rmitesh/laravel-pantry"><img alt="Total Downloads" src="https://img.shields.io/packagist/dt/rmitesh/laravel-pantry.svg?style=for-the-badge"></a>
+<a href="https://laravel.com"><img alt="Laravel v10.x" src="https://img.shields.io/badge/Laravel-v10.x-FF2D20?style=for-the-badge&logo=laravel"></a>
+<a href="https://php.net"><img alt="PHP 8.1" src="https://img.shields.io/badge/PHP-8.1-777BB4?style=for-the-badge&logo=php"></a>
+</p>
+
+
 You may know and worked with repository pattern in the Laravel.
 
 Now, here I am going to introduce **Laravel Pantry** where you get all things in one place same as Food Pantry Shop.

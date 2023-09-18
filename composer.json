@@ -1,6 +1,6 @@
 {
     "name": "rmitesh/laravel-pantry",
-    "description": "To generate a Laravel repository equipped with essential default features.",
+    "description": "To generate a Laravel class equipped with essential default features.",
     "keywords": [
         "rmitesh",
         "laravel",
