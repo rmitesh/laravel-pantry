@@ -102,7 +102,7 @@ class MakePantryCommand extends Command
             'modelNamespace' => $modelNamespace,
         ]);
 
-        $this->info("Panrty [{$path}] created successfully.");
+        $this->info("Pantry [{$path}] created successfully.");
 
         return static::SUCCESS;
     }
