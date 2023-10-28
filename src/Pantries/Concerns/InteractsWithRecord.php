@@ -44,4 +44,21 @@ trait InteractsWithRecord
         }
         return $query;
     }
+
+    protected function resolveWhereCondition(Builder $query, array $conditions): Builder
+    {
+        if ( $conditions ) {
+            foreach ( $conditions as $functionName => $condition ) {
+
+                if ( count($condition) == 3 ) {
+                    [$column, $operator, $value] = $condition;
+                    $query->{$functionName}($column, $operator, $value);
+                } else {
+                    [$column, $value] = $condition;
+                    $query->{$functionName}($column, $value);
+                }
+            }
+        }
+        return $query;
+    }
 }
