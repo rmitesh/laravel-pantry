@@ -40,16 +40,28 @@ abstract class Pantry implements Contracts\Pantry
     /**
 	 * To get single record from the model.
 	 * 
-	 * @param  \Illuminate\Database\Eloquent\Model|int|string  $record
-	 * @return \Illuminate\Database\Eloquent\Model
+	 * @param  \Illuminate\Database\Eloquent\Model|array|int|string  $record
+	 * @param  array  	$relationships
+	 * @param  array  	$columns
+	 * @return \Illuminate\Database\Eloquent\Model|null
 	 */
-    public function get( Model | int | string $record, array $relationships = [] ): Model
+
+    public function get( Model | array | int | string $record, array $columns = ['*'], array $relationships = [] ): ?Model
     {
-    	return static::getEloquentQuery()
-    		->tap(fn ($instance) =>
-                $this->resolveRelationship($instance, $relationships)
-            )
-            ->first();
+        if ( $record instanceof Model ) {
+        	return $record;
+        }
+
+    	$query = static::getEloquentQuery()->select($columns);
+    	if ( is_array($record) ) {
+    		$record = $query->where($record)->first();
+    	} else {
+    		$routeKeyName = app(static::getModel())->getRouteKeyName();
+
+    		$record = $query->where($routeKeyName, $record)->first();
+    	}
+
+        return $record;
     }
 
     /**
@@ -59,12 +71,15 @@ abstract class Pantry implements Contracts\Pantry
 	 * @param  array  $relationships
 	 * @return Illuminate\Support\Collection
 	 */
-    public function getAll( array $columns = ['*'], array $relationships = [] ): Collection
+    public function getAll( array $columns = ['*'], array $conditions = [], array $relationships = [] ): Collection
     {
     	return static::getEloquentQuery()
     		->select($columns)
             ->tap(fn ($records) =>
                 $this->resolveRelationship($records, $relationships)
+            )
+            ->tap(fn ($records) =>
+                $this->resolveWhereCondition($records, $conditions)
             )
             ->latest()
             ->get();
