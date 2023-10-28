@@ -109,8 +109,21 @@ To fetch multiple records.
 
 ```php
 $foods = $this->foodPantry->getAll([
-	// your column name, default '*'
+	// your column name, default '*',
+	// conditions,
+	// relationships
 ]);
+```
+
+With conditions, it's an optional parameter.
+
+```php
+
+$foods = $this->foodPantry->getAll(
+	conditions: [
+		'where' => [ 'status', true ],
+	]
+);
 ```
 
 With relationships, it's an optional parameter.
@@ -127,6 +140,7 @@ $foods = $this->foodPantry->getAll([
 | Argument    	 | Value 																	 			   |
 | -------------- | --------------------------------------------------------------------------------------- |
 | $columns  	 | Column names in array format, by default it will be `['*']` 				  			   |
+| $conditions  	 | It's Optional, You can add conditions, by default it will be empty array.  			   |
 | $relationships | It's Optional, You can pass relationship arguments in array. see <a href="#fetch-data-with-relationships">relationships</a> examples |
 
 As a return it will give collection.
