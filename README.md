@@ -96,7 +96,7 @@ $food = $this->foodPantry->get($record);
 
 | Argument    	 | Value 																	 			 |
 | -------------- | ------------------------------------------------------------------------------------- |
-| $record  	 	 | It accepts modal ID ( `Illuminate\Database\Eloquent\Model`, `string`, `id` )			 |
+| $record  	 	 | It accepts model ID ( `Illuminate\Database\Eloquent\Model`, `string`, `id` )			 |
 | $relationships | It's Optional, You can pass relationship arguments in array. see <a href="#fetch-data-with-relationships">relationships</a> examples  			 |
 
 > It will also works with Route Model Binding.
@@ -121,7 +121,8 @@ With conditions, it's an optional parameter.
 
 $foods = $this->foodPantry->getAll(
 	conditions: [
-		'where' => [ 'status', true ],
+		['where', 'status', true ],
+		['whereHas', 'relationshipName' ],
 	]
 );
 ```
@@ -228,7 +229,6 @@ $food = $this->foodPantry->destroy($key);
 | Argument   	 | Value 														   				 |
 | -------------- | ----------------------------------------------------------------------------- |
 | $key  	 	 | It accepts record ID ( `Illuminate\Database\Eloquent\Model`, `string`, `id` ) |
-| $data  	 	 | Array key-value pair 										   				 |
 
 As a return true on record deleted, false on failure.
 
