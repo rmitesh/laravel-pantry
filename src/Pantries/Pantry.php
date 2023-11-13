@@ -54,14 +54,15 @@ abstract class Pantry implements Contracts\Pantry
 
     	$query = static::getEloquentQuery()->select($columns);
     	if ( is_array($record) ) {
-    		$record = $query->where($record)->first();
+    		$query->where($record);
     	} else {
     		$routeKeyName = app(static::getModel())->getRouteKeyName();
 
-    		$record = $query->where($routeKeyName, $record)->first();
+    		$query->where($routeKeyName, $record);
     	}
+		$this->resolveRelationship($query, $relationships);
 
-        return $record;
+        return $query->first();
     }
 
     /**

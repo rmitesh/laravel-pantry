@@ -97,6 +97,7 @@ $food = $this->foodPantry->get($record);
 | Argument    	 | Value 																	 			 |
 | -------------- | ------------------------------------------------------------------------------------- |
 | $record  	 	 | It accepts model ID ( `Illuminate\Database\Eloquent\Model`, `string`, `id` )			 |
+| $columns  	 | Column names in array format, by default it will be `['*']` 				  			   |
 | $relationships | It's Optional, You can pass relationship arguments in array. see <a href="#fetch-data-with-relationships">relationships</a> examples  			 |
 
 > It will also works with Route Model Binding.
